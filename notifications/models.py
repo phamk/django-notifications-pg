@@ -7,12 +7,12 @@ from django import get_version
 from django.conf import settings
 from django.contrib.auth.models import Group
 from django.contrib.contenttypes.models import ContentType
+from django.contrib.postgres.fields import JSONField
 from django.core.exceptions import ImproperlyConfigured
 from django.db import models
 from django.db.models.query import QuerySet
 from django.utils import timezone
 from django.utils.six import text_type
-from jsonfield.fields import JSONField
 from model_utils import Choices
 from notifications import settings as notifications_settings
 from notifications.signals import notify
