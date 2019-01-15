@@ -6,6 +6,8 @@
 
 `django-notifications <https://github.com/django-notifications/django-notifications>`_ is a GitHub notification alike app for Django, it was derived from `django-activity-stream <https://github.com/justquick/django-activity-stream>`_
 
+django-notifications-pg is a fork of django-notifications specifically for postgres-backed projects. It does not support older versions of Python and Django (use django-notifications if you need it).
+
 The major difference between ``django-notifications`` and ``django-activity-stream``:
 
 * ``django-notifications`` is for building something like Github "Notifications"
@@ -28,8 +30,8 @@ Nomenclature of this specification is based on the Activity Streams Spec: `<http
 Requirements
 ============
 
-- Python 2.7, 3.4, 3.5, 3.6
-- Django 1.7, 1.8, 1.9, 1.10, 1.11, 2.0
+- Python 3.4, 3.5, 3.6, 3.7
+- Django 2.0
 
 Installation
 ============
