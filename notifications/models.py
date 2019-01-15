@@ -13,7 +13,6 @@ from django.db import models
 from django.db.models.query import QuerySet
 from django.utils import timezone
 from django.utils.six import text_type
-from model_utils import Choices
 from notifications import settings as notifications_settings
 from notifications.signals import notify
 from notifications.utils import id2slug
@@ -164,8 +163,17 @@ class Notification(models.Model):
         <a href="http://oebfare.com/">brosner</a> commented on <a href="http://github.com/pinax/pinax">pinax/pinax</a> 2 hours ago # noqa
 
     """
-    LEVELS = Choices('success', 'info', 'warning', 'error')
-    level = models.CharField(choices=LEVELS, default=LEVELS.info, max_length=20)
+    LEVEL_SUCCESS = 'success'
+    LEVEL_INFO = 'info'
+    LEVEL_WARNING = 'warning'
+    LEVEL_ERROR = 'error'
+    LEVELS = (
+        (LEVEL_SUCCESS, LEVEL_SUCCESS),
+        (LEVEL_INFO, LEVEL_INFO),
+        (LEVEL_WARNING, LEVEL_WARNING),
+        (LEVEL_ERROR, LEVEL_ERROR),
+    )
+    level = models.CharField(choices=LEVELS, default=LEVEL_INFO, max_length=20)
 
     recipient = models.ForeignKey(
         settings.AUTH_USER_MODEL,
