@@ -270,7 +270,7 @@ def notify_handler(verb, **kwargs):
     public = bool(kwargs.pop('public', True))
     description = kwargs.pop('description', None)
     timestamp = kwargs.pop('timestamp', timezone.now())
-    level = kwargs.pop('level', Notification.LEVELS_INFO)
+    level = kwargs.pop('level', Notification.LEVEL_INFO)
 
     # Check if User or Group
     if isinstance(recipient, Group):
