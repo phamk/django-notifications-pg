@@ -7,7 +7,7 @@ from django.urls import path
 from notifications import views
 
 
-urlpaths = [
+urlpatterns = [
     path('', views.AllNotificationsList.as_view(), name='all'),
     path('unread/', views.UnreadNotificationsList.as_view(), name='unread'),
     path('mark-all-as-read/', views.mark_all_as_read, name='mark_all_as_read'),
