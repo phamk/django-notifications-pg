@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 ''' Django Notifications exemple views '''
-from distutils.version import StrictVersion  # pylint: disable=no-name-in-module,import-error
 
 from django import get_version
 from django.contrib.auth.decorators import login_required
@@ -13,20 +12,7 @@ from notifications.models import Notification
 from notifications.utils import id2slug, slug2id
 from notifications.settings import get_config
 
-if StrictVersion(get_version()) >= StrictVersion('1.7.0'):
-    from django.http import JsonResponse  # noqa
-else:
-    # Django 1.6 doesn't have a proper JsonResponse
-    import json
-    from django.http import HttpResponse  # noqa
-
-    def date_handler(obj):
-        return obj.isoformat() if hasattr(obj, 'isoformat') else obj
-
-    def JsonResponse(data):  # noqa
-        return HttpResponse(
-            json.dumps(data, default=date_handler),
-            content_type="application/json")
+from django.http import JsonResponse
 
 
 class NotificationViewList(ListView):

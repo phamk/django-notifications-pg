@@ -26,15 +26,11 @@ setup(
     author_email='yang@yangyubo.com',
     url='http://github.com/django-notifications/django-notifications',
     install_requires=[
-        'django>=1.7',
-        'django-model-utils>=2.0.3',
-        'jsonfield>=1.0.3',
+        'django>=2.0',
         'pytz'
     ],
     test_requires=[
-        'django>=1.7',
-        'django-model-utils>=2.0.3',
-        'jsonfield>=1.0.3',
+        'django>=2.0',
         'pytz'
     ],
     packages=[
@@ -60,11 +56,11 @@ setup(
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Utilities'
     ],
     keywords='django notifications github action event stream',

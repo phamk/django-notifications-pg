@@ -1,11 +1,9 @@
 ''' Django notifications models file '''
 # -*- coding: utf-8 -*-
 # pylint: disable=too-many-lines
-from distutils.version import StrictVersion  # pylint: disable=no-name-in-module,import-error
-
-from django import get_version
 from django.conf import settings
 from django.contrib.auth.models import Group
+from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.postgres.fields import JSONField
 from django.core.exceptions import ImproperlyConfigured
@@ -13,14 +11,10 @@ from django.db import models
 from django.db.models.query import QuerySet
 from django.utils import timezone
 from django.utils.six import text_type
+
 from notifications import settings as notifications_settings
 from notifications.signals import notify
 from notifications.utils import id2slug
-
-if StrictVersion(get_version()) >= StrictVersion('1.8.0'):
-    from django.contrib.contenttypes.fields import GenericForeignKey  # noqa
-else:
-    from django.contrib.contenttypes.generic import GenericForeignKey  # noqa
 
 
 EXTRA_DATA = notifications_settings.get_config()['USE_JSONFIELD']
