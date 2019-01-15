@@ -18,7 +18,7 @@ with open('notifications/__init__.py', 'rb') as f:
 
 
 setup(
-    name='django-notifications-hq',
+    name='django-notifications-pg',
     version=version,
     description='GitHub notifications alike app for Django.',
     long_description=open('README.rst').read(),
