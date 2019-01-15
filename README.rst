@@ -36,22 +36,14 @@ Requirements
 Installation
 ============
 
-Installation is easy using ``pip`` and will install all required libraries.
+Get it from source
 
 ::
 
-    $ pip install django-notifications-hq
-
-or get it from source
-
-::
-
-    $ git clone https://github.com/django-notifications/django-notifications
-    $ cd django-notifications
+    $ git clone https://github.com/phamk/django-notifications-pg
+    $ cd django-notifications-pg
     $ python setup.py sdist
-    $ pip install dist/django-notifications-hq*a
-
-Note that `django-model-utils <http://pypi.python.org/pypi/django-model-utils>`_ will be installed: this is required for the pass-through QuerySet manager.
+    $ pip install dist/django-notifications-pg*a
 
 Then to add the Django Notifications to your project add the app ``notifications`` to your ``INSTALLED_APPS`` and urlconf.
 
