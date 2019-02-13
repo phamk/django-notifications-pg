@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('unread', models.BooleanField(default=True)),
                 ('actor_object_id', models.CharField(max_length=255)),
                 ('verb', models.CharField(max_length=255)),
-                ('description', models.TextField(null=True, blank=True)),
+                ('description', models.TextField(blank=True)),
                 ('target_object_id', models.CharField(max_length=255, null=True, blank=True)),
                 ('action_object_object_id', models.CharField(max_length=255, null=True, blank=True)),
                 ('timestamp', models.DateTimeField(default=django.utils.timezone.now)),

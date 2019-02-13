@@ -182,7 +182,7 @@ class Notification(models.Model):
     actor = GenericForeignKey('actor_content_type', 'actor_object_id')
 
     verb = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True)
 
     target_content_type = models.ForeignKey(
         ContentType,
