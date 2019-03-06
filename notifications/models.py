@@ -268,7 +268,7 @@ def notify_handler(verb, **kwargs):
         for opt in ('target', 'action_object')
     ]
     public = bool(kwargs.pop('public', True))
-    description = kwargs.pop('description', None)
+    description = kwargs.pop('description', '')
     timestamp = kwargs.pop('timestamp', timezone.now())
     level = kwargs.pop('level', Notification.LEVEL_INFO)
 
