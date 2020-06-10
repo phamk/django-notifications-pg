@@ -10,7 +10,6 @@ from django.core.exceptions import ImproperlyConfigured
 from django.db import models
 from django.db.models.query import QuerySet
 from django.utils import timezone
-from django.utils.six import text_type
 
 from notifications import settings as notifications_settings
 from notifications.signals import notify
@@ -287,7 +286,7 @@ def notify_handler(verb, **kwargs):
             recipient=recipient,
             actor_content_type=ContentType.objects.get_for_model(actor),
             actor_object_id=actor.pk,
-            verb=text_type(verb),
+            verb=str(verb),
             public=public,
             description=description,
             timestamp=timestamp,
